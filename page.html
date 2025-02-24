@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .header {
+            background-color: #007bff;
+            padding: 20px;
+            color: #fff;
+            font-size: 24px;
+            animation: fadeInDown 1s ease-in-out;
+        }
+        .hero {
+            padding: 50px 0;
+            background-color: #e9ecef;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+        .services {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 0;
+        }
+        .service {
+            background-color: #ced8db;
+            padding: 20px;
+            width: 30%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 1s ease-in-out;
+        }
+        .service.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .about, .testimonials, .contact {
+            padding: 50px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Welcome to Our Landing Page</div>
+    <div class="hero container">
+        <h1>Build Your Future with Us</h1>
+        <p>Join us today and take the first step towards success.</p>
+        <button class="btn">Get Started</button>
+    </div>
+    <div class="services container">
+        <div class="service"><h2>Web Development</h2><p>Learn to build amazing websites with modern technologies.</p></div>
+        <div class="service"><h2>Design</h2><p>Enhance your creativity with the latest design trends.</p></div>
+        <div class="service"><h2>Marketing</h2><p>Boost your business with effective marketing strategies.</p></div>
+    </div>
+    <div class="about container">
+        <h2>About Us</h2>
+        <p>We are a team of professionals dedicated to helping you achieve your goals.</p>
+    </div>
+    <div class="testimonials container">
+        <h2>What Our Clients Say</h2>
+        <p>"This platform transformed my business!" - Alex</p>
+        <p>"Highly recommended for anyone looking to grow." - Jordan</p>
+    </div>
+    <div class="contact container">
+        <h2>Contact Us</h2>
+        <p>Email: contact@yourcompany.com</p>
+        <p>Phone: (123) 456-7890</p>
+    </div>
+    <div class="footer">&copy; 2025 YourCompany. All Rights Reserved.</div>
+    <script>
+        window.addEventListener('scroll', function() {
+            let services = document.querySelectorAll('.service');
+            services.forEach(service => {
+                let position = service.getBoundingClientRect().top;
+                let windowHeight = window.innerHeight;
+                if (position < windowHeight - 50) {
+                    service.classList.add('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
